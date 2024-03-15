@@ -1,11 +1,9 @@
 function checkForSpam(message) {
-  const normalizedString = message.toLowerCase();
-  const hasSpam = normalizedString.includes(spam);
-  const hasSale = normalizedString.includes(sale);
-  if (hasSpam || hasSale) {
-    return Boolean;
+  let normalizedString = message.toLowerCase();
+  if (normalizedString.includes('spam') || normalizedString.includes('sale')) {
+    return true;
   } else {
-    return Boolean;
+    return false;
   }
 }
 
@@ -17,10 +15,3 @@ console.log(checkForSpam('Amazing SalE, only tonight!')); // true
 console.log(checkForSpam('Trust me, this is not a spam message')); // true
 console.log(checkForSpam('Get rid of sPaM emails. Our book in on sale!')); // true
 console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
-
-// Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути в довільному регістрі, наприклад SPAM або sAlE.
-
-// Доповни код функції таким чином, що:
-
-// Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
-// Якщо в рядку відсутні заборонені слова, функція повертає буль false
